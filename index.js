@@ -31,6 +31,13 @@ let products = [
 app.listen(PORT, () => {
   console.log("puerto 3001 amigue");
 });
+app.get("/", (req, res) => {
+  res
+    .status(200)
+    .send(
+      "<h1>API para consulta de productos Codiba</h1><p><ul><li>/products : Get all products</li><li>/products/:category : Get all products from sended category</li></ul></p>"
+    );
+});
 app.get("/api/products", (req, res) => {
   res.status(200).json(products);
 });
